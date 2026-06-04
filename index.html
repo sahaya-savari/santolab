@@ -3775,10 +3775,15 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <script>
-  /* Disable all links — frontend only, no navigation */
+  /* Disable all navigation links — frontend only, no external navigation */
+  /* But allow close/popup buttons with onclick handlers to still work */
   document.addEventListener('click', function(e) {
     var el = e.target.closest('a');
     if (el) {
+      // Allow if it has an onclick (like close buttons)
+      if (el.hasAttribute('onclick')) return;
+      // Allow if it's a close button by class
+      if (el.classList.contains('js-close-popup') || el.classList.contains('formpopup__close') || el.classList.contains('close')) return;
       e.preventDefault();
       e.stopPropagation();
     }
