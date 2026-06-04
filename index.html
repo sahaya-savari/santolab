@@ -3774,6 +3774,17 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 </script>
 
+<script>
+  /* Disable all links — frontend only, no navigation */
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('a');
+    if (el) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  }, true);
+</script>
+
 </body>
 
 </html>
