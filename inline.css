@@ -711,3 +711,7 @@ linear; */
   .testimonia-wrap .testimonial-content:nth-child(2) { box-shadow: none; }
   .testimonia-wrap .testimonial-content:nth-child(2):hover { box-shadow: 0 12px 28px rgba(0,0,0,0.10) !important; transform: none !important; }
 }
+
+/* Responsive safety reset */
+html, body { max-width: 100vw; overflow-x: hidden; }
+img, svg, video, canvas { max-width: 100%; }
